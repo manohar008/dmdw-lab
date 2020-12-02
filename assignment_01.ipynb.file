@@ -1,0 +1,208 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "18cse193_dmdw-assignment-01.ipynb",
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "UjVbzNiFiRXH",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "3d730cc0-1f30-4e0b-8e29-6278c985bc39"
+      },
+      "source": [
+        "n_num= [23,34,12,5,6,22,33,41,56,56,78,12,12,12]\n",
+        "n=len(n_num)\n",
+        "get_sum=sum(n_num)\n",
+        "mean=get_sum/n\n",
+        "print(\"Mean/Average is:\"+str(mean))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Mean/Average is:28.714285714285715\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AFPHTKrJuU8E",
+        "outputId": "f92a79e9-bba5-43ee-ac48-c8f6ace7fa90"
+      },
+      "source": [
+        "#median without library function\n",
+        "n_num = [23,34,12,5,6,22,33,41,56,56,78,12,12,12] \n",
+        "n = len(n_num) \n",
+        "n_num.sort() \n",
+        "  \n",
+        "if n % 2 == 0: \n",
+        "    median1 = n_num[n//2] \n",
+        "    median2 = n_num[n//2 - 1] \n",
+        "    median = (median1 + median2)/2\n",
+        "else: \n",
+        "    median = n_num[n//2] \n",
+        "print(\"Median is: \" + str(median))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Median is: 22.5\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qCx5xgxzueTx",
+        "outputId": "6b55d5f3-c774-443b-8574-8e73cd98a769"
+      },
+      "source": [
+        "#mode without libray function\n",
+        "from collections import Counter \n",
+        "n_num = [23,34,12,5,6,22,33,41,56,56,78,12,12,12] \n",
+        "n = len(n_num) \n",
+        "  \n",
+        "data = Counter(n_num) \n",
+        "get_mode = dict(data) \n",
+        "mode = [k for k, v in get_mode.items() if v == max(list(data.values()))] \n",
+        "  \n",
+        "if len(mode) == n: \n",
+        "    get_mode = \" mode not found\"\n",
+        "else: \n",
+        "    get_mode = \"Mode is / are: \" + ', '.join(map(str, mode)) \n",
+        "      \n",
+        "print(get_mode)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Mode is / are: 12\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uwQzzjWFujqU",
+        "outputId": "615deb80-57b6-4160-ca10-a2da8e60fa02"
+      },
+      "source": [
+        "import statistics\n",
+        "statistics.mean([23,34,12,5,6,22,33,41,56,56,78,12,12,12])"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "28.714285714285715"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sqkLmBmDu38G",
+        "outputId": "a91bcdd7-8a06-41f8-d0af-d1f9305159e9"
+      },
+      "source": [
+        "# calculatuon for  list of variance \n",
+        "import numpy as np \n",
+        "list = [ 23,34,12,22,5,33,41,56,78] \n",
+        "print(np.var(list))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "451.0617283950617\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VBOtcg9wu-t4",
+        "outputId": "ac894bb0-dfd3-4311-ed08-ae704e02dd60"
+      },
+      "source": [
+        "#calculation of standard deviation\n",
+        "import numpy as np \n",
+        "  \n",
+        "# Taking the elements in List type\n",
+        "list = [23,34,12,22,5,33,41,56,78]  \n",
+        "print(np.std(list))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "21.238213870169538\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_GjZM-p5u_5H"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
